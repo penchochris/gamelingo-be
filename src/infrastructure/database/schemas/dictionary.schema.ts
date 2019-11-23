@@ -5,15 +5,13 @@ export const DictionarySchema = new Schema(
     id: {
       type: String,
       required: true,
-      index: true,
     },
     spanish: String,
     english: String,
     japaneseRomaji: String,
     japaneseKanji: String,
     japaneseKana: String,
-    categories: [String]
-
+    categories: [String],
   },
   { strict: false, timestamps: true, autoCreate: true },
 );

@@ -1,15 +1,15 @@
 import { 
-  //HttpModule, 
+  HttpModule, 
   Module } from '@nestjs/common';
 import { DatabaseModule } from './database.module';
 
-//import { HttpConfigService } from '../../infrastructure/services/http-config.service';
+import { HttpConfigService } from '../../infrastructure/services/http-config.service';
 
 @Module({
   imports: [
-    // HttpModule.registerAsync({
-    //   useClass: HttpConfigService,
-    // }),
+    HttpModule.registerAsync({
+       useClass: HttpConfigService,
+    }),
     DatabaseModule,
   ],
   providers: [],
