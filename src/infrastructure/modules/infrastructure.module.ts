@@ -7,9 +7,6 @@ import { HttpConfigService } from '../../infrastructure/services/http-config.ser
 
 @Module({
   imports: [
-    HttpModule.registerAsync({
-       useClass: HttpConfigService,
-    }),
     DatabaseModule,
   ],
   providers: [],

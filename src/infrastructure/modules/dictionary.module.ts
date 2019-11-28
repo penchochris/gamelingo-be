@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { QuizService } from '../../application/services/quiz/quiz.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { DictionaryService } from '../../application/services/dictionary/dictionary.service';
+import { DictionaryController } from 'src/application/controllers/dictionary/dictionary.controller'; 
 import { DictionarySchema } from '../database/schemas/dictionary.schema';
-import { QuizController } from '../../application/controllers/quiz/quiz.controller'; 
 import { DictionaryMongoRepository } from 'src/infrastructure/repositories/dictionary/dictionary.mongo.repository';
 import { Repositories, Schemas } from './modules.constants';
 
@@ -12,10 +12,11 @@ import { Repositories, Schemas } from './modules.constants';
       { name: Schemas.Dictionary, schema: DictionarySchema }
     ])
   ],
-  controllers: [QuizController],
+  controllers: [DictionaryController],
   providers: [
     { provide: Repositories.DictionaryRepository, useClass: DictionaryMongoRepository },
-    QuizService,
+    DictionaryService
   ],
 })
-export class QuizModule {}
+
+export class DictionaryModule {}

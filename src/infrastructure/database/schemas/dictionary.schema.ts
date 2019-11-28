@@ -2,10 +2,6 @@ import { Schema } from 'mongoose';
 
 export const DictionarySchema = new Schema(
   {
-    id: {
-      type: String,
-      required: true,
-    },
     spanish: String,
     english: String,
     japaneseRomaji: String,
@@ -13,5 +9,4 @@ export const DictionarySchema = new Schema(
     japaneseKana: String,
     categories: [String],
   },
-  { strict: false, timestamps: true, autoCreate: true },
 );

@@ -7,10 +7,10 @@ import { MongooseModule } from '@nestjs/mongoose';
     MongooseModule.forRoot('mongodb://localhost/gamelingo',{
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    }),
+    })
   ],
   providers: [],
   exports: [],
 })
-export class DatabaseModule {
-}
+
+export class DatabaseModule {}
